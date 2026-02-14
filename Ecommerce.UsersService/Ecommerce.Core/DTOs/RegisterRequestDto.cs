@@ -7,4 +7,4 @@
 /// <param name="Password">Password to create account.</param>
 /// <param name="PersonName">Name of the person.</param>
 /// <param name="Gender">Gender of the person.</param>
-public record RegisterRequestDto(string? Email, string? Password, string? PersonName, GenderOptions Gender);
+public record RegisterRequestDto(string? Email, string? Password, string? PersonName, GenderOptions? Gender);
