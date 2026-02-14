@@ -3,6 +3,9 @@ using FluentValidation;
 
 namespace Ecommerce.Core.Validators;
 
+/// <summary>
+/// Provides validation rules for login requests, ensuring that the email and password fields meet required criteria.
+/// </summary>
 public class LoginRequestValidator : AbstractValidator<LoginRequestDto>
 {
     public LoginRequestValidator()

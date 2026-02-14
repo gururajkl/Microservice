@@ -4,6 +4,10 @@ using Ecommerce.Core.Entities;
 
 namespace Ecommerce.Core.Mappers;
 
+/// <summary>
+/// Defines an AutoMapper profile for mapping properties from the <see cref="RegisterRequestDto"/> entity to the
+/// <see cref="ApplicationUser"/> data transfer object.
+/// </summary>
 public class RegisterRequestDtoMappingProfile : Profile
 {
     public RegisterRequestDtoMappingProfile()

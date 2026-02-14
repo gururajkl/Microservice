@@ -4,6 +4,10 @@ using Ecommerce.Core.Entities;
 
 namespace Ecommerce.Core.Mappers;
 
+/// <summary>
+/// Defines an AutoMapper profile for mapping properties from the <see cref="ApplicationUser"/> entity to the
+/// <see cref="AuthenticationResponseDto"/> data transfer object.
+/// </summary>
 public class ApplicationUserMappingProfile : Profile
 {
     public ApplicationUserMappingProfile()

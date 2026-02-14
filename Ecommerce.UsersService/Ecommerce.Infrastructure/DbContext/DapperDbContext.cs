@@ -4,6 +4,13 @@ using System.Data;
 
 namespace Ecommerce.Infrastructure.DbContext;
 
+/// <summary>
+/// Represents a database context that provides access to a PostgreSQL database connection for use with Dapper.
+/// </summary>
+/// <remarks>
+/// This context initializes a new database connection using the connection string specified in the
+/// application's configuration under the key 'PostgresConnection'.
+/// </remarks>
 public class DapperDbContext
 {
     private readonly IDbConnection _dbConnection;
