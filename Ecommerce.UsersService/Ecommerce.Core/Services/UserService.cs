@@ -26,13 +26,7 @@ internal class UserService(IUserRepository userRepository, IMapper mapper) : IUs
 
     public async Task<AuthenticationResponseDto?> RegisterUserAsync(RegisterRequestDto requestDto)
     {
-        ApplicationUser user = new()
-        {
-            Email = requestDto.Email,
-            Password = requestDto.Password,
-            Gender = requestDto.Gender.ToString(),
-            PersonName = requestDto.PersonName,
-        };
+        ApplicationUser user = mapper.Map<ApplicationUser>(requestDto);
 
         ApplicationUser? createdUser = await userRepository.AddUserAsync(user);
 

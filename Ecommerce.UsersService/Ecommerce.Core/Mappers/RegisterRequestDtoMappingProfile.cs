@@ -1,0 +1,17 @@
+﻿using AutoMapper;
+using Ecommerce.Core.DTOs;
+using Ecommerce.Core.Entities;
+
+namespace Ecommerce.Core.Mappers;
+
+public class RegisterRequestDtoMappingProfile : Profile
+{
+    public RegisterRequestDtoMappingProfile()
+    {
+        CreateMap<RegisterRequestDto, ApplicationUser>()
+            .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+            .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))
+            .ForMember(dest => dest.PersonName, opt => opt.MapFrom(src => src.PersonName))
+            .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Gender.ToString()));
+    }
+}
