@@ -2,6 +2,7 @@ using Ecommerce.API.Middlewares;
 using Ecommerce.Core;
 using Ecommerce.Core.Mappers;
 using Ecommerce.Infrastructure;
+using FluentValidation.AspNetCore;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +21,9 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 
 // Configure auto mapper.
 builder.Services.AddAutoMapper(config => { }, typeof(ApplicationUserMappingProfile).Assembly);
+
+// Configure Fluent validation.
+builder.Services.AddFluentValidationAutoValidation();
 
 var app = builder.Build();
 
