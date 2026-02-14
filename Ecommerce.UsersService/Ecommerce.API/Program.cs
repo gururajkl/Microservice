@@ -25,12 +25,34 @@ builder.Services.AddAutoMapper(config => { }, typeof(ApplicationUserMappingProfi
 // Configure Fluent validation.
 builder.Services.AddFluentValidationAutoValidation();
 
+// Add endpoint api explorer.
+builder.Services.AddEndpointsApiExplorer();
+
+// Add swagger generation services to create swgger specification.
+builder.Services.AddSwaggerGen();
+
+// Add CORS services.
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 // Custom exception handler.
 app.UseExceptionHandlingMiddleware();
 
 app.UseRouting();
+
+// Add endpoint that can serve swagger.json.
+app.UseSwagger();
+// This configures the swagger ui.
+app.UseSwaggerUI();
+
+app.UseCors();
 
 app.UseAuthentication();
 app.UseAuthorization();
