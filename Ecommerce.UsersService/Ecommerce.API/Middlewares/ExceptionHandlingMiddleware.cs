@@ -1,5 +1,16 @@
 ﻿namespace Ecommerce.API.Middlewares;
 
+/// <summary>
+/// Middleware that handles exceptions thrown during the request processing pipeline, logging the error details and
+/// returning a standardized error response.
+/// </summary>
+/// <remarks>
+/// This middleware captures exceptions thrown by downstream middleware, logs the exception type and
+/// message, and returns a 500 Internal Server Error response with the exception message and type in JSON
+/// format.
+/// </remarks>
+/// <param name="next">The delegate that represents the next middleware in the request processing pipeline.</param>
+/// <param name="logger">The logger used to log error details when an exception occurs.</param>
 public class ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
 {
     public async Task Invoke(HttpContext context)

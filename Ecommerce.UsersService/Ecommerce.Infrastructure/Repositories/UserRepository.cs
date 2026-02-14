@@ -5,6 +5,14 @@ using Ecommerce.Infrastructure.DbContext;
 
 namespace Ecommerce.Infrastructure.Repositories;
 
+/// <summary>
+/// Provides methods for managing user data, including adding new users and retrieving users by email and password.
+/// </summary>
+/// <remarks>
+/// This repository uses Dapper for efficient database access and is intended for internal use within the
+/// application.
+/// </remarks>
+/// <param name="dbContext">The database context used to perform user-related data operations.</param>
 internal class UserRepository(DapperDbContext dbContext) : IUserRepository
 {
     public async Task<ApplicationUser?> AddUserAsync(ApplicationUser user)
