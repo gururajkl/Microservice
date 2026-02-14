@@ -1,4 +1,5 @@
 ﻿using Ecommerce.Core.RepositoryContracts;
+using Ecommerce.Infrastructure.DbContext;
 using Ecommerce.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,6 +15,7 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
         services.AddSingleton<IUserRepository, UserRepository>();
+        services.AddTransient<DapperDbContext>();
         return services;
     }
 }
