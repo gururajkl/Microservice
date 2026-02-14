@@ -5,7 +5,7 @@ using Ecommerce.Infrastructure.DbContext;
 
 namespace Ecommerce.Infrastructure.Repositories;
 
-internal class UserRepository(DapperDbContext dbContext : IUserRepository
+internal class UserRepository(DapperDbContext dbContext) : IUserRepository
 {
     public async Task<ApplicationUser?> AddUserAsync(ApplicationUser user)
     {
