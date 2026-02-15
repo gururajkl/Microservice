@@ -1,9 +1,9 @@
 ﻿using Dapper;
-using Ecommerce.Core.Entities;
-using Ecommerce.Core.RepositoryContracts;
-using Ecommerce.Infrastructure.DbContext;
+using Ecommerce.UserService.Core.Entities;
+using Ecommerce.UserService.Core.RepositoryContracts;
+using Ecommerce.UserService.Infrastructure.DbContext;
 
-namespace Ecommerce.Infrastructure.Repositories;
+namespace Ecommerce.UserService.Infrastructure.Repositories;
 
 /// <summary>
 /// Provides methods for managing user data, including adding new users and retrieving users by email and password.

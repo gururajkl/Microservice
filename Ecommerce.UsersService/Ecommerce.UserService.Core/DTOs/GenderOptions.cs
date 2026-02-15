@@ -1,4 +1,4 @@
-﻿namespace Ecommerce.Core.DTOs;
+﻿namespace Ecommerce.UserService.Core.DTOs;
 
 /// <summary>
 /// Specifies the available options for representing a person's gender.

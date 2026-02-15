@@ -1,4 +1,4 @@
-﻿namespace Ecommerce.Core.Entities;
+﻿namespace Ecommerce.UserService.Core.Entities;
 
 /// <summary>
 /// Defines <see cref="ApplicationUser"/> class which acts as entity model class to store user details in data store.

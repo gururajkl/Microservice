@@ -1,10 +1,9 @@
-﻿using Ecommerce.Core.ServiceContracts;
-using Ecommerce.Core.Services;
-using Ecommerce.Core.Validators;
+﻿using Ecommerce.UserService.Core.ServiceContracts;
+using Ecommerce.UserService.Core.Validators;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Ecommerce.Core;
+namespace Ecommerce.UserService.Core;
 
 public static class DependencyInjection
 {
@@ -15,7 +14,7 @@ public static class DependencyInjection
     /// <returns>The service collection with the core services registered.</returns>
     public static IServiceCollection AddCore(this IServiceCollection services)
     {
-        services.AddTransient<IUserService, UserService>();
+        services.AddTransient<IUserService, Services.UserService>();
 
         // Add all the fluent validators.
         services.AddValidatorsFromAssemblyContaining<LoginRequestValidator>();

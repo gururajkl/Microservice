@@ -1,4 +1,4 @@
-﻿namespace Ecommerce.Core.DTOs;
+﻿namespace Ecommerce.UserService.Core.DTOs;
 
 /// <summary>
 /// Represents a data required to register new account.

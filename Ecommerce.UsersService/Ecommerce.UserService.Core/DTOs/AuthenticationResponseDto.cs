@@ -1,4 +1,4 @@
-﻿namespace Ecommerce.Core.DTOs;
+﻿namespace Ecommerce.UserService.Core.DTOs;
 
 /// <summary>
 /// Represents the response returned after an authentication attempt.

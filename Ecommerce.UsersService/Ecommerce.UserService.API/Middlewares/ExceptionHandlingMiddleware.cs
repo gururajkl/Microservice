@@ -1,4 +1,4 @@
-﻿namespace Ecommerce.API.Middlewares;
+﻿namespace Ecommerce.UserService.API.Middlewares;
 
 /// <summary>
 /// Middleware that handles exceptions thrown during the request processing pipeline, logging the error details and

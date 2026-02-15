@@ -1,6 +1,6 @@
-﻿using Ecommerce.Core.DTOs;
+﻿using Ecommerce.UserService.Core.DTOs;
 
-namespace Ecommerce.Core.ServiceContracts;
+namespace Ecommerce.UserService.Core.ServiceContracts;
 
 /// <summary>
 /// Defines business operations related to user management.

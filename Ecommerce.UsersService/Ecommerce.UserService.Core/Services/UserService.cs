@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using Ecommerce.Core.DTOs;
-using Ecommerce.Core.Entities;
-using Ecommerce.Core.RepositoryContracts;
-using Ecommerce.Core.ServiceContracts;
+using Ecommerce.UserService.Core.DTOs;
+using Ecommerce.UserService.Core.Entities;
+using Ecommerce.UserService.Core.RepositoryContracts;
+using Ecommerce.UserService.Core.ServiceContracts;
 
-namespace Ecommerce.Core.Services;
+namespace Ecommerce.UserService.Core.Services;
 
 internal class UserService(IUserRepository userRepository, IMapper mapper) : IUserService
 {

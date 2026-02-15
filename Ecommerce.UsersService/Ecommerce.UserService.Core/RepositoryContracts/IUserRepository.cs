@@ -1,6 +1,6 @@
-﻿using Ecommerce.Core.Entities;
+﻿using Ecommerce.UserService.Core.Entities;
 
-namespace Ecommerce.Core.RepositoryContracts;
+namespace Ecommerce.UserService.Core.RepositoryContracts;
 
 /// <summary>
 /// Defines data access operations related to application users.

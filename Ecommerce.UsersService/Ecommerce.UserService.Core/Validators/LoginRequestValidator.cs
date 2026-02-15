@@ -1,7 +1,7 @@
-﻿using Ecommerce.Core.DTOs;
+﻿using Ecommerce.UserService.Core.DTOs;
 using FluentValidation;
 
-namespace Ecommerce.Core.Validators;
+namespace Ecommerce.UserService.Core.Validators;
 
 /// <summary>
 /// Provides validation rules for <see cref="LoginRequestDto"/>, ensuring that the email and password fields meet required criteria.

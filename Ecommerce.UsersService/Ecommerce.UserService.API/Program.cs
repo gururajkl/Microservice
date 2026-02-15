@@ -1,7 +1,7 @@
-using Ecommerce.API.Middlewares;
-using Ecommerce.Core;
-using Ecommerce.Core.Mappers;
-using Ecommerce.Infrastructure;
+using Ecommerce.UserService.API.Middlewares;
+using Ecommerce.UserService.Core;
+using Ecommerce.UserService.Core.Mappers;
+using Ecommerce.UserService.Infrastructure;
 using FluentValidation.AspNetCore;
 using System.Text.Json.Serialization;
 

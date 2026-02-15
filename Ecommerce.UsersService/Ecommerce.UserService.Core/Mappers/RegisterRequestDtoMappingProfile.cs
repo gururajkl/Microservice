@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Ecommerce.Core.DTOs;
-using Ecommerce.Core.Entities;
+using Ecommerce.UserService.Core.DTOs;
+using Ecommerce.UserService.Core.Entities;
 
-namespace Ecommerce.Core.Mappers;
+namespace Ecommerce.UserService.Core.Mappers;
 
 /// <summary>
 /// Defines an AutoMapper profile for mapping properties from the <see cref="RegisterRequestDto"/> entity to the

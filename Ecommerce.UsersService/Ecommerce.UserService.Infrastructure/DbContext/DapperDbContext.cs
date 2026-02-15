@@ -2,7 +2,7 @@
 using Npgsql;
 using System.Data;
 
-namespace Ecommerce.Infrastructure.DbContext;
+namespace Ecommerce.UserService.Infrastructure.DbContext;
 
 /// <summary>
 /// Represents a database context that provides access to a PostgreSQL database connection for use with Dapper.

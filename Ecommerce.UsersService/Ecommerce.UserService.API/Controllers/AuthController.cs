@@ -1,8 +1,8 @@
-﻿using Ecommerce.Core.DTOs;
-using Ecommerce.Core.ServiceContracts;
+﻿using Ecommerce.UserService.Core.DTOs;
+using Ecommerce.UserService.Core.ServiceContracts;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Ecommerce.API.Controllers;
+namespace Ecommerce.UserService.API.Controllers;
 
 /// <summary>
 /// Controller responsible which maintains user account.

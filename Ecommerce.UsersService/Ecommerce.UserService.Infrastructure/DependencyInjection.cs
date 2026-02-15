@@ -1,9 +1,9 @@
-﻿using Ecommerce.Core.RepositoryContracts;
-using Ecommerce.Infrastructure.DbContext;
-using Ecommerce.Infrastructure.Repositories;
+﻿using Ecommerce.UserService.Core.RepositoryContracts;
+using Ecommerce.UserService.Infrastructure.DbContext;
+using Ecommerce.UserService.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Ecommerce.Infrastructure;
+namespace Ecommerce.UserService.Infrastructure;
 
 public static class DependencyInjection
 {
