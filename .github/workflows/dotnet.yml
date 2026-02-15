@@ -21,22 +21,22 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Clean Backend
+    - name: Clean UsersService Backend
       run: dotnet clean Ecommerce.UsersService/Ecommerce.UsersService.slnx
 
-    - name: Restore Backend
+    - name: Restore UsersService Backend
       run: dotnet restore Ecommerce.UsersService/Ecommerce.UsersService.slnx
 
-    - name: Build Backend
+    - name: Build UsersService Backend
       run: dotnet build --no-restore Ecommerce.UsersService/Ecommerce.UsersService.slnx
 
-    - name: Clean Backend
+    - name: Clean ProductService Backend
       run: dotnet clean Ecommerce.ProductService/Ecommerce.ProductService.slnx
 
-    - name: Restore Backend
+    - name: Restore ProductService Backend
       run: dotnet restore Ecommerce.ProductService/Ecommerce.ProductService.slnx
 
-    - name: Build Backend
+    - name: Build ProductService Backend
       run: dotnet build --no-restore Ecommerce.ProductService/Ecommerce.ProductService.slnx
 
     # -------------------------
