@@ -1,12 +1,19 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Ecommerce.ProductService.Infrastructure.DatabaseContext;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Ecommerce.ProductService.Infrastructure;
 
 public static class DepedencyInjection
 {
-    public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
+    public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
     {
-        // TODO: Add services.
+        services.AddDbContext<PersonDbContext>(options =>
+        {
+            options.UseMySQL(configuration.GetConnectionString("MySQL")!);
+        });
+
         return services;
     }
 }
