@@ -1,6 +1,3 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
 name: Microservice
 
 on:
@@ -15,13 +12,36 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    # -------------------------
+    # Setup .NET
+    # -------------------------
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: Clean
+
+    - name: Clean Backend
       run: dotnet clean Ecommerce.UsersService/Ecommerce.UsersService.slnx
-    - name: Restore dependencies
+
+    - name: Restore Backend
       run: dotnet restore Ecommerce.UsersService/Ecommerce.UsersService.slnx
-    - name: Build
+
+    - name: Build Backend
       run: dotnet build --no-restore Ecommerce.UsersService/Ecommerce.UsersService.slnx
+
+    # -------------------------
+    # Setup Node (Angular)
+    # -------------------------
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Install Angular Dependencies
+      working-directory: UserServiceAngularApp
+      run: npm ci
+
+    - name: Build Angular App
+      working-directory: UserServiceAngularApp
+      run: npm run build -- --configuration production
