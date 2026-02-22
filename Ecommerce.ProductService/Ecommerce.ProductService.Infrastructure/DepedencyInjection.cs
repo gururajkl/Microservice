@@ -9,7 +9,7 @@ public static class DepedencyInjection
 {
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<PersonDbContext>(options =>
+        services.AddDbContext<ProductDbContext>(options =>
         {
             options.UseMySQL(configuration.GetConnectionString("MySQL")!);
         });
