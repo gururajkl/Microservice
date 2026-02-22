@@ -8,14 +8,14 @@ namespace Ecommerce.ProductService.Infrastructure.Repositories;
 
 internal class ProductRepository(ProductDbContext dbContext) : IProductsRepository
 {
-    public async Task<Product?> AddProduct(Product product)
+    public async Task<Product?> AddProductAsync(Product product)
     {
         dbContext.Products.Add(product);
         await dbContext.SaveChangesAsync();
         return product;
     }
 
-    public async Task<bool> DeleteProduct(Guid productId)
+    public async Task<bool> DeleteProductAsync(Guid productId)
     {
         Product? product = await dbContext.Products.FirstOrDefaultAsync(p => p.ProductId == productId);
 
@@ -42,7 +42,7 @@ internal class ProductRepository(ProductDbContext dbContext) : IProductsReposito
         return await dbContext.Products.ToListAsync();
     }
 
-    public async Task<Product?> UpdateProduct(Product product)
+    public async Task<Product?> UpdateProductAsync(Product product)
     {
         Product? exisitingProduct = await dbContext.Products.FirstOrDefaultAsync(p => p.ProductId == product.ProductId);
 

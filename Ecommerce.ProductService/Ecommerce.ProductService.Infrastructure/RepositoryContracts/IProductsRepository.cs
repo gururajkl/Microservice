@@ -29,18 +29,18 @@ public interface IProductsRepository
     /// Adds a new product to the database.
     /// </summary>
     /// <param name="product">The product data to insert.</param>
-    Task<Product?> AddProduct(Product product);
+    Task<Product?> AddProductAsync(Product product);
 
     /// <summary>
     /// Updates an existing product in the database.
     /// </summary>
     /// <param name="product">The product data to update.</param>
-    Task<Product?> UpdateProduct(Product product);
+    Task<Product?> UpdateProductAsync(Product product);
 
     /// <summary>
     /// Deletes a product from the database by its unique ID.
     /// </summary>
     /// <param name="productId">The ID of the product to remove.</param>
     /// <returns>True if the deletion was successful; otherwise, false.</returns>
-    Task<bool> DeleteProduct(Guid productId);
+    Task<bool> DeleteProductAsync(Guid productId);
 }

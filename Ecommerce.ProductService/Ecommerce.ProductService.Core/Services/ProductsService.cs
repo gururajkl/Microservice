@@ -27,7 +27,7 @@ internal class ProductsService(IProductsRepository repository, IMapper mapper,
 
         Product product = mapper.Map<Product>(productAddRequestDto);
 
-        Product? newProduct = await repository.AddProduct(product);
+        Product? newProduct = await repository.AddProductAsync(product);
 
         if (newProduct is null) return null;
 
@@ -37,7 +37,7 @@ internal class ProductsService(IProductsRepository repository, IMapper mapper,
     public async Task<bool> DeleteProductAsync(Guid productId)
     {
         Product? product = await repository.GetProductByConditionAsync(p => p.ProductId == productId);
-        return product is not null && await repository.DeleteProduct(productId);
+        return product is not null && await repository.DeleteProductAsync(productId);
     }
 
     public async Task<ProductResponseDto?> GetProductByConditionAsync(Expression<Func<Product, bool>> expression)
@@ -83,7 +83,7 @@ internal class ProductsService(IProductsRepository repository, IMapper mapper,
 
         Product product = mapper.Map<Product>(productUpdateRequestDto);
 
-        Product? updatedProduct = await repository.UpdateProduct(product);
+        Product? updatedProduct = await repository.UpdateProductAsync(product);
 
         if (updatedProduct is null) return null;
 

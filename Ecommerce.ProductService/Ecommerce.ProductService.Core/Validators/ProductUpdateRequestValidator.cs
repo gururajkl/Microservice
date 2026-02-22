@@ -3,6 +3,9 @@ using FluentValidation;
 
 namespace Ecommerce.ProductService.Core.Validators;
 
+/// <summary>
+/// Create fluent validation for the <see cref="ProductUpdateRequestDto"/>.
+/// </summary>
 public class ProductUpdateRequestValidator : AbstractValidator<ProductUpdateRequestDto>
 {
     public ProductUpdateRequestValidator()
