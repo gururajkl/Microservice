@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace Ecommerce.ProductService.Core.ServiceContracts;
 
-public interface IProductService
+public interface IProductsService
 {
     Task<ProductResponseDto?> GetProductsAsync();
     Task<List<ProductResponseDto?>> GetProductsByConditionAsync(Expression<Func<Product, bool>> expression);
