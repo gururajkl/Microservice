@@ -6,7 +6,7 @@ namespace Ecommerce.ProductService.Core.ServiceContracts;
 
 public interface IProductsService
 {
-    Task<ProductResponseDto?> GetProductsAsync();
+    Task<List<ProductResponseDto?>> GetProductsAsync();
     Task<List<ProductResponseDto?>> GetProductsByConditionAsync(Expression<Func<Product, bool>> expression);
     Task<ProductResponseDto?> GetProductByConditionAsync(Expression<Func<Product, bool>> expression);
     Task<ProductResponseDto?> AddProductAsync(ProductAddRequestDto productAddRequestDto);

@@ -34,28 +34,59 @@ internal class ProductsService(IProductsRepository repository, IMapper mapper,
         return mapper.Map<ProductResponseDto>(newProduct);
     }
 
-    public Task<bool> DeleteProductAsync(Guid productId)
+    public async Task<bool> DeleteProductAsync(Guid productId)
     {
-        throw new NotImplementedException();
+        Product? product = await repository.GetProductByConditionAsync(p => p.ProductId == productId);
+        return product is not null && await repository.DeleteProduct(productId);
     }
 
-    public Task<ProductResponseDto?> GetProductByConditionAsync(Expression<Func<Product, bool>> expression)
+    public async Task<ProductResponseDto?> GetProductByConditionAsync(Expression<Func<Product, bool>> expression)
     {
-        throw new NotImplementedException();
+        Product? product = await repository.GetProductByConditionAsync(expression);
+
+        if (product is null) return null;
+
+        return mapper.Map<ProductResponseDto>(product);
     }
 
-    public Task<ProductResponseDto?> GetProductsAsync()
+    public async Task<List<ProductResponseDto?>> GetProductsAsync()
     {
-        throw new NotImplementedException();
+        IEnumerable<Product> products = await repository.GetProductsAsync();
+
+        IEnumerable<ProductResponseDto> productResponseDtos = mapper.Map<IEnumerable<ProductResponseDto>>(products);
+
+        return [.. productResponseDtos];
     }
 
-    public Task<List<ProductResponseDto?>> GetProductsByConditionAsync(Expression<Func<Product, bool>> expression)
+    public async Task<List<ProductResponseDto?>> GetProductsByConditionAsync(Expression<Func<Product, bool>> expression)
     {
-        throw new NotImplementedException();
+        IEnumerable<Product>? products = await repository.GetProductsByConditionAsync(expression);
+
+        IEnumerable<ProductResponseDto> productResponseDtos = mapper.Map<IEnumerable<ProductResponseDto>>(products);
+
+        return [.. productResponseDtos];
     }
 
-    public Task<ProductResponseDto?> UpdateProductAsync(ProductUpdateRequestDto productUpdateRequestDto)
+    public async Task<ProductResponseDto?> UpdateProductAsync(ProductUpdateRequestDto productUpdateRequestDto)
     {
-        throw new NotImplementedException();
+        Product? exisitingProduct = await repository.GetProductByConditionAsync(p => p.ProductId == productUpdateRequestDto.ProductId);
+
+        if (exisitingProduct is null) ArgumentException.ThrowIfNullOrEmpty(nameof(productUpdateRequestDto));
+
+        ValidationResult validationResult = await productUpdateRequestValidator.ValidateAsync(productUpdateRequestDto);
+
+        if (!validationResult.IsValid)
+        {
+            string error = string.Join(", ", validationResult.Errors.Select(v => v.ErrorMessage));
+            throw new Exception(error);
+        }
+
+        Product product = mapper.Map<Product>(productUpdateRequestDto);
+
+        Product? updatedProduct = await repository.UpdateProduct(product);
+
+        if (updatedProduct is null) return null;
+
+        return mapper.Map<ProductResponseDto>(updatedProduct);
     }
 }
