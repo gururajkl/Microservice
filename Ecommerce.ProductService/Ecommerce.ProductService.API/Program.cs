@@ -1,3 +1,4 @@
+using Ecommerce.ProductService.API.APIEndpoints;
 using Ecommerce.ProductService.API.Middlewares;
 using Ecommerce.ProductService.Core;
 using Ecommerce.ProductService.Infrastructure;
@@ -24,5 +25,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapProductEndpoints();
 
 app.Run();
