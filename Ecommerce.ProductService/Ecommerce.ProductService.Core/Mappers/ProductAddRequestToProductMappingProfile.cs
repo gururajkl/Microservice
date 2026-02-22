@@ -15,8 +15,8 @@ public class ProductAddRequestToProductMappingProfile : Profile
         CreateMap<ProductAddRequestDto, Product>()
             .ForMember(destination => destination.ProductName, option => option.MapFrom(source => source.ProductName))
             .ForMember(destination => destination.UnitPrice, option => option.MapFrom(source => source.UnitPrice))
-            .ForMember(destination => destination.QuantityInStock, option => option.MapFrom(source => source.Quantity))
-            .ForMember(destination => destination.Category, option => option.MapFrom(source => source.CategoryOption))
+            .ForMember(destination => destination.QuantityInStock, option => option.MapFrom(source => source.QuantityInStock))
+            .ForMember(destination => destination.Category, option => option.MapFrom(source => source.Category))
             .ForMember(destination => destination.ProductId, option => option.Ignore());
     }
 }
