@@ -1,10 +1,9 @@
-﻿namespace Ecommerce.ProductService.Core.DTOs
+﻿namespace Ecommerce.ProductService.Core.DTOs;
+
+public enum CategoryOptionDto
 {
-    public enum CategoryOptionDto
-    {
-        Electronics,
-        HoneAppliances,
-        Furniture,
-        Accessories
-    }
+    Electronics,
+    HoneAppliances,
+    Furniture,
+    Accessories
 }
