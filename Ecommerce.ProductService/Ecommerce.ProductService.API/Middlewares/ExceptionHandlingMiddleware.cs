@@ -34,7 +34,7 @@ public class ExceptionHandlingMiddleware(RequestDelegate next, ILogger<Exception
             await context.Response.WriteAsJsonAsync(new
             {
                 ex.Message,
-                Type = ex.GetType()
+                Type = ex.GetType().Name
             });
         }
     }
