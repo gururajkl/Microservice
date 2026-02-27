@@ -3,10 +3,10 @@
 /// <summary>
 /// Defines the available product categories within the e-commerce system.
 /// </summary>
-public enum CategoryOptionDto
+public enum CategryOptionDto
 {
     Electronics,
-    HoneAppliances,
+    HomeAppliances,
     Furniture,
     Accessories
 }
