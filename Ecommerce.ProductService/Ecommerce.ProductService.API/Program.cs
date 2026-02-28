@@ -22,12 +22,33 @@ builder.Services.ConfigureHttpJsonOptions(options =>
     options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
 });
 
+// Add swagger services.
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Add cors services.
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 app.UseExceptionHandlingMiddleware();
 
+// Use swagger.
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.UseRouting();
 
+// Usw cors.
+app.UseCors();
+
+app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
