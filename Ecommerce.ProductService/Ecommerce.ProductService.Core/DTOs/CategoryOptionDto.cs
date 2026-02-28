@@ -3,7 +3,7 @@
 /// <summary>
 /// Defines the available product categories within the e-commerce system.
 /// </summary>
-public enum CategryOptionDto
+public enum CategoryOptionDto
 {
     Electronics,
     HomeAppliances,
