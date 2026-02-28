@@ -48,9 +48,9 @@ jobs:
         node-version: 20
 
     - name: Install Angular Dependencies
-      working-directory: UserServiceAngularApp
+      working-directory: AngularApplication
       run: npm ci
 
     - name: Build Angular App
-      working-directory: UserServiceAngularApp
+      working-directory: AngularApplication
       run: npm run build -- --configuration production
